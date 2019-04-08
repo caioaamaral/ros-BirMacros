@@ -11,10 +11,10 @@ cat ros.bashrc >> ~/.bashrc
 ```
 If you create a workspace `~/workspaces/name_ws`, add an alias at ros.bashrc following the pattern:
 
-`alias name='setEnvironment name'`
+`alias name='setEnvironment name_ws'`
 
 And set your workspaces file path inside ros.bashrc
 
 `WORKSPACE_PATH=~/workspaces`
 
-Then just type `name` at terminal to source and cd to `name`
+Then just type `name_ws` at terminal to source and cd to `name_ws`
