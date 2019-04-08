@@ -17,4 +17,4 @@ And set your workspaces file path inside ros.bashrc
 
 `WORKSPACE_PATH=~/workspaces`
 
-Then just type `name` at terminal to source and cd to name
+Then just type `name` at terminal to source and cd to `name`
