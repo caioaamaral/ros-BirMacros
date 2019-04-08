@@ -17,4 +17,4 @@ And set your workspaces file path inside ros.bashrc
 
 `WORKSPACE_PATH=~/workspaces`
 
-Then just type `name_ws` at terminal to source and cd to `name_ws`
+Then just type `name_ws` at terminal to reset all ROS environment variables and resource to `name_ws` and switch to `name_ws` folder.
