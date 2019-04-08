@@ -13,4 +13,4 @@ If you creat a workspace called name_ws, add an alias at ros.bashrc following th
 
 `alias name='setEnvironment name'`
 
-Then just type `name` at terminal to source and cd to name_ws
+Then just type `name` at terminal to source and cd to name
