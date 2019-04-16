@@ -13,4 +13,4 @@ Inside ros_BirMacros.sh set your workspacefolder root `WORKSPACE_PATH=~/workspac
 
 Use `workspace init name_ws` to catkin config and catkin init ~/workspaces/name_ws.
 
-An alias name_ws will be generated to switch to your new workspace and source its environment. Every time you use the alias, it will first reset the environment and source the new one.
+An alias name_ws will be generated to switch to your new workspace and source its environment. Every time you use a macro generated alias, it will first reset the environment and source the new one.
