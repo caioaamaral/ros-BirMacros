@@ -1,4 +1,4 @@
-# ros-bashrc
+# ros-BirMacros
 An optimized ~./bashrc setup for dealing with ROS environment variables
 
 #How to Use
@@ -6,15 +6,11 @@ An optimized ~./bashrc setup for dealing with ROS environment variables
 cd ~/
 git clone https://github.com/caioaamaral/ros-bashrc
 cd ros-bashrc
-cat ros.bashrc >> ~/.bashrc
+echo source ~/ros_bashrc/ros_BirMacros.sh >> ~/.bashrc
 
 ```
-If you create a workspace `~/workspaces/name_ws`, add an alias at ros.bashrc following the pattern:
+Inside ros_BirMacros.sh set your workspacefolder root `WORKSPACE_PATH=~/workspaces`
 
-`alias name='setEnvironment name_ws'`
+Use `workspace init name_ws` to catkin config and catkin init ~/workspaces/name_ws.
 
-And set your workspaces file path inside ros.bashrc
-
-`WORKSPACE_PATH=~/workspaces`
-
-Then just type `name_ws` at terminal to reset all ROS environment variable, source and switch to `name_ws` folder.
+An alias name_ws will be generated to switch to your new workspace and source its environment. Every time you use the alias, it will first reset the environment and source the new one.
