@@ -1,4 +1,4 @@
-# ros-bashrc
+# ros-BirMacros
 An optimized ~./bashrc setup for dealing with ROS environment variables
 
 #How to Use
