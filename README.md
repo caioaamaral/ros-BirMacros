@@ -9,7 +9,7 @@ cd ros-bashrc
 echo source ~/ros_bashrc/ros_BirMacros.sh >> ~/.bashrc
 
 ```
-1. Inside ros_BirMacros.sh set your workspacefolder root `WORKSPACE_PATH=~/workspaces`
+1. Inside ros_BirMacros.sh set your workspacefolder root up `WORKSPACE_PATH=~/workspaces`
 
 2. Use `workspace init name_ws` to catkin config and catkin init ~/workspaces/name_ws.
 
