@@ -13,7 +13,7 @@ echo source ~/ros_bashrc/ros_BirMacros.sh >> ~/.bashrc
 
 2. Use `workspace init name_ws` to catkin config and catkin init ~/workspaces/name_ws.
 
-**obs: An alias `name_ws` will be generated to switch to your new workspace and source its environment. Every time you use a macro generated alias, it will first reset the environment and source the new one.**
+**obs: An alias `name_ws` will be generated. You can use it to switch to your new workspace and source its environment. Every time you use a macro generated alias, it will first reset the environment and source the new one.**
 
 3. Just type `name_ws` whenever you want to source ~/workspaces/name_ws/devel/setup.bash
 
