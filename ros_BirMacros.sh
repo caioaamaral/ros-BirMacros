@@ -1,27 +1,27 @@
 # ROS Environment and Aliases definitions
-source /opt/ros/kinetic/setup.bash export EDITOR=code
+#TODO: 
 
-WORKSPACE_PATH=~/workspaces
+WORKSPACE_DIR=~/workspaces
 
 setEnvironment () {
     local WORKSPACE_NAME=$1
     source ~/.bashrc
-    source $WORKSPACE_PATH/$WORKSPACE_NAME/devel/setup.bash
-    cd $WORKSPACE_PATH/$WORKSPACE_NAME
+    source $WORKSPACE_DIR/$WORKSPACE_NAME/devel/setup.bash
+    cd $WORKSPACE_DIR/$WORKSPACE_NAME
     if [[ $2 = --code ]]; then
-        code $WORKSPACE_PATH/$WORKSPACE_NAME
+        code $WORKSPACE_DIR/$WORKSPACE_NAME
     fi
 }
 
 workspace(){
     if [ $1 == init ]; then
-        cd $WORKSPACE_PATH
+        cd $WORKSPACE_DIR
         mkdir -p $2/src
-        cd $WORKSPACE_PATH/$2
+        cd $WORKSPACE_DIR/$2
         catkin config
         catkin init
         setEnvironment $2
-        echo "alias $2='setEnvironment $2'" >> ~/ros_bashrc/ros_BirMacros.sh
+        echo "alias $2='setEnvironment $2'" >> ~/ros-bashrc/ros_BirMacros.sh
     fi
 }
 
@@ -32,3 +32,5 @@ alias pt_ws='setEnvironment pt_ws'
 alias kinova_b='setEnvironment kinova_b'
 alias pybullet='setEnvironment pybullet'
 alias pybullet_ws='setEnvironment pybullet_ws'
+alias dothkill='setEnvironment dothkill'
+alias doogie_ws='setEnvironment doogie_ws'
