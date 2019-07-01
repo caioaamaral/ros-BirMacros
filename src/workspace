@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+_worskpace_completion() {
+    local COMMAND_LIST="init source"
+
+    COMPREPLY=($(compgen -W "$COMMAND_LIST" "${COMP_WORDS[1]}"))
+}
+
+complete -F _worskpace_completion workspace 
+
+_workspace_init() {
+    cd $WORKSPACE_DIR
+    mkdir -p $1/src
+    cd $WORKSPACE_DIR/$1
+    catkin config
+    catkin init
+    #_set_environment $2
+    echo "alias $1='_workspace_set_environment $1'" >> ~/ros-bashrc/src/ros_BirMacros.sh
+
+}
+
+_workspace_set_environment() {
+    local WORKSPACE_NAME=$1
+    source ~/.bashrc
+    source $WORKSPACE_DIR/$WORKSPACE_NAME/devel/setup.bash
+    cd $WORKSPACE_DIR/$WORKSPACE_NAME
+    if [[ $2 = --code ]]; then
+        code $WORKSPACE_DIR/$WORKSPACE_NAME
+    fi
+}
+
+param_num="$#"
+
+for param in {1..5}
+do
+    case "${!param}" in 
+    init)
+        _workspace_init $2
+        ;;
+    esac
+
+    case "${!param}" in
+    source)
+        _workspace_set_environment
+    esac
+
+done
