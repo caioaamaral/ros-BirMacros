@@ -3,16 +3,11 @@
 # ROS Environment and Aliases definitions
 #TODO: 
 
-WORKSPACE_DIR=~/workspaces
-MACRO_DIR=~/ros-bashrc
-
 if [ ! -d "$WORKSPACE_DIR" ]; then
     echo "WORKSPACE_DIR is not set yet. "
 fi
 
-export PATH="${MACRO_DIR}/bin:${PATH}"
-
-setEnvironment () {
+_set_environment() {
     local WORKSPACE_NAME=$1
     source ~/.bashrc
     source $WORKSPACE_DIR/$WORKSPACE_NAME/devel/setup.bash
@@ -22,24 +17,27 @@ setEnvironment () {
     fi
 }
 
-workspace(){
+_workspace() {
     if [ $1 == init ]; then
         cd $WORKSPACE_DIR
         mkdir -p $2/src
         cd $WORKSPACE_DIR/$2
         catkin config
         catkin init
-        setEnvironment $2
-        echo "alias $2='setEnvironment $2'" >> ~/ros-bashrc/ros_BirMacros.sh
+        _set_environment $2
+        echo "alias $2='_set_environment $2'" >> ~/ros-bashrc/src/ros_BirMacros.sh
+    fi
+
+    if [  ]; then
+        _set_environment $2
     fi
 }
 
-alias jacob_ws='setEnvironment jacob_ws'
-alias kinova_ws='setEnvironment kinova_ws'
-alias dyn_ws='setEnvironment dyn_ws'
-alias pt_ws='setEnvironment pt_ws'
-alias kinova_b='setEnvironment kinova_b'
-alias pybullet='setEnvironment pybullet'
-alias pybullet_ws='setEnvironment pybullet_ws'
-alias dothkill='setEnvironment dothkill'
-alias doogie_ws='setEnvironment doogie_ws'
+alias jacob_ws='_set_environment jacob_ws'
+alias kinova_ws='_set_environment kinova_ws'
+alias dyn_ws='_set_environment dyn_ws'
+alias pt_ws='_set_environment pt_ws'
+alias kinova_b='_set_environment kinova_b'
+alias pybullet='_set_environment pybullet'
+alias pybullet_ws='_set_environment pybullet_ws'
+alias doogie_ws='_set_environment doogie_ws'
